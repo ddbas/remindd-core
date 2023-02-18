@@ -27,7 +27,8 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepare": "husky install",
-    "prepublishOnly": "rm -rf lib && npm run build"
+    "prepublishOnly": "rm -rf lib && npm run build",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "bugs": {
     "url": "https://github.com/ddbas/remindd-core/issues"
