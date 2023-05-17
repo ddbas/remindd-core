@@ -1,6 +1,6 @@
 {
   "name": "@remindd/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A natural language reminder parser.",
   "author": "David Bastien",
   "homepage": "https://github.com/ddbas/remindd-core#readme",
