@@ -7,8 +7,7 @@ const cleanseReminderTitle = (title: string): string => {
     const trimmedTitle = title.replaceAll(/\s+/g, ' ').trim();
 
     // Remove preposition before the reminder text.
-    const reminderTitle = trimmedTitle.replace(/^(?:about|that|to)\s+/, '');
-    return reminderTitle;
+    return trimmedTitle.replace(/^(?:about|that|to)\s+/, '');
 };
 
 const parseReminderDate = (text: string): { date: Date; remaining: string } => {
@@ -41,9 +40,14 @@ const parseReminderDate = (text: string): { date: Date; remaining: string } => {
 
 const parse = (text: string): Reminder => {
     const { date, remaining } = parseReminderDate(text);
+    const title = cleanseReminderTitle(remaining);
+    if (!title.trim()) {
+        throw new Error('No remind title found.');
+    }
+
     return {
         date,
-        title: cleanseReminderTitle(remaining),
+        title
     };
 };
 
